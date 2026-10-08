@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Molana-Poetry — کتابخانه دیجیتال آثار مولانا جلال‌الدین محمد بلخی">
+<title>Molana-Poetry | اشعار مولانا</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#home" aria-label="Molana-Poetry">
+      <div class="logo-mark">☾</div>
+      <div><h1 class="logo-title">Molana-Poetry</h1><span class="logo-subtitle">اشعار مولانا</span></div>
+    </a>
+    <nav class="navbar">
+      <a href="#home" data-nav="home" class="active">خانه</a>
+      <a href="#work/98" data-nav="98">دیوان شمس</a>
+      <a href="#work/103" data-nav="103">مثنوی معنوی</a>
+      <a href="#work/1873" data-nav="1873">فیه ما فیه</a>
+      <a href="#work/1874" data-nav="1874">مجالس سبعه</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" title="تغییر حالت">☼</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="homeHero">
+  <div class="hero-symbol">☾</div>
+  <h1>اشعار مولانا</h1>
+  <h2>Molana-Poetry</h2>
+  <p>کتابخانه‌ای یکپارچه برای مطالعه، جست‌وجو و چاپ آثار مولانا جلال‌الدین محمد بلخی؛ با متن‌ها به‌صورت محلی و بدون نیاز به سرور.</p>
+  <div class="hero-actions">
+    <a class="primary-btn" href="#library">شروع مطالعه</a>
+    <button class="secondary-btn" id="randomBtn">✦ شعر تصادفی</button>
+  </div>
+  <div class="stats" id="stats"></div>
+</section>
+
+<main>
+<section class="section" id="library">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">LIBRARY</span>
+        <h2>آثار مولانا 📚</h2>
+        <p>همه بخش‌های اصلی در همین سایت قرار گرفته‌اند و متن‌ها از فایل‌های داخلی خوانده می‌شوند.</p>
+      </div>
+      <div class="search-box">
+        <span>⌕</span><input id="searchInput" type="search" placeholder="جستجو در عنوان شعر..." autocomplete="off">
+      </div>
+    </div>
+    <div id="searchResults" class="search-results hidden"></div>
+    <div id="worksGrid" class="works-grid"></div>
+  </div>
+</section>
+
+<section class="section hidden" id="categoryView">
+  <div class="container">
+    <button class="back-home" id="backBtn">← بازگشت</button>
+    <div class="page-heading">
+      <span id="categoryIcon" class="page-icon">📜</span>
+      <div><h2 id="categoryTitle"></h2><p id="categoryDesc"></p></div>
+    </div>
+    <div class="category-tools">
+      <input id="poemSearch" type="search" placeholder="جستجو در عنوان‌های این بخش...">
+      <span id="categoryCount"></span>
+    </div>
+    <div id="categoryList" class="poem-list"></div>
+  </div>
+</section>
+
+<section class="section hidden" id="readerView">
+  <div class="container">
+    <button class="back-home" id="readerBack">← بازگشت به فهرست</button>
+    <article class="reader-card">
+      <div class="reader-meta" id="readerMeta"></div>
+      <h2 id="readerTitle"></h2>
+      <div class="reader-actions">
+        <button id="copyBtn">کپی متن</button>
+        <button id="printBtn">چاپ</button>
+      </div>
+      <div id="readerPoem" class="poem-text"></div>
+    </article>
+  </div>
+</section>
+
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="about-card">
+      <div class="about-symbol">☼</div>
+      <div><span class="eyebrow">ABOUT</span><h2>مولانا جلال‌الدین محمد بلخی</h2><p id="bioText">در حال دریافت اطلاعات...</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <strong>Molana-Poetry</strong>
+  <p>کتابخانه دیجیتال آثار مولانا</p>
+  <div class="footer-links">
+    <a href="#home">خانه</a><a href="#work/98">دیوان شمس</a><a href="#work/103">مثنوی</a>
+    <a href="#work/1873">فیه ما فیه</a><a href="#work/1874">مجالس سبعه</a>
+  </div>
+  <p>© 2026 Molana-Poetry • داده‌ها از Ganjoor Data</p>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

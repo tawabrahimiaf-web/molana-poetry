@@ -1,0 +1,8 @@
+Data attribution
+
+The poetry data used by this site was extracted from the supplied ganjoor.s3db database, which corresponds to Ganjoor Data.
+
+This website is a separate front-end project. Before public redistribution, review the upstream Ganjoor Data repository and any applicable source/attribution terms:
+https://github.com/ganjoor/ganjoor-data
+
+Please keep this attribution note with the project.
