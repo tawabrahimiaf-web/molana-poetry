@@ -15,8 +15,11 @@ function workCard(w){
 async function init(){
  try{
   catalog=await loadJSON("catalog.json"); searchIndex=await loadJSON("search-index.json");
-  $("#bioText").textContent=catalog.poet.description||"";
-  $("#stats").innerHTML=`<div class="stat"><strong>${faNum(catalog.stats.poems)}</strong><span>متن</span></div><div class="stat"><strong>${faNum(catalog.stats.verses)}</strong><span>بیت/سطر</span></div><div class="stat"><strong>۴</strong><span>مجموعه اصلی</span></div>`;
+  
+  // حذف شده: بخش آمار (Stats)
+  // $("#bioText").textContent=catalog.poet.description||"";
+  // $("#stats").innerHTML=`<div class="stat"><strong>${faNum(catalog.stats.poems)}</strong><span>متن</span></div>...`;
+  
   $("#worksGrid").innerHTML=catalog.works.map(workCard).join("");
   document.querySelectorAll(".subcat").forEach(b=>b.onclick=()=>openCategory(+b.dataset.work,+b.dataset.cat));
   if(location.hash.startsWith("#work/")){const id=+location.hash.split("/")[1];openWork(id)}
@@ -95,7 +98,10 @@ $("#copyBtn").onclick=()=>{if(!currentPoem)return;navigator.clipboard?.writeText
 $("#printBtn").onclick=()=>window.print();
 $("#themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("molana-theme",document.body.classList.contains("dark")?"dark":"light");$("#themeBtn").textContent=document.body.classList.contains("dark")?"☀":"☼"};
 if(localStorage.getItem("molana-theme")==="dark"){document.body.classList.add("dark");$("#themeBtn").textContent="☀"}
-$("#randomBtn").onclick=async()=>{try{const all=searchIndex;const p=all[Math.floor(Math.random()*all.length)];currentWork=await getWork(p.work_id);currentCategory=p.cat_id;await openPoem(p.id)}catch(e){toast("امکان نمایش شعر تصادفی نبود")}};
+
+// حذف شده: دکمه شعر تصادفی (Random Button)
+// $("#randomBtn").onclick=async()=>{try{const all=searchIndex;const p=all[Math.floor(Math.random()*all.length)];currentWork=await getWork(p.work_id);currentCategory=p.cat_id;await openPoem(p.id)}catch(e){toast("امکان نمایش شعر تصادفی نبود")}};
+
 $("#searchInput").oninput=e=>{
  const q=e.target.value.trim().toLowerCase(), box=$("#searchResults");
  if(!q){box.classList.add("hidden");return}
